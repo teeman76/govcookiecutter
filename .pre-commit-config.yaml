@@ -11,6 +11,17 @@ repos:
         name: Check for a blank line at the end of scripts (auto-fixes)
       - id: trailing-whitespace
         name: Check for trailing whitespaces (auto-fixes)
+- repo: https://github.com/astral-sh/ruff-pre-commit
+  # Ruff version.
+  rev: v0.11.7
+  hooks:
+    # Run the linter.
+    - id: ruff
+      types_or: [ python, pyi ]
+      args: [ --fix ]
+    # Run the formatter.
+    - id: ruff-format
+      types_or: [ python, pyi ]
   - repo: https://github.com/pycqa/isort
     rev: 6.0.1
     hooks:
@@ -25,11 +36,11 @@ repos:
         name: black - consistent Python code formatting (auto-fixes)
         language_version: python # Should be a command that runs python3.6+
         exclude: test_example_module.py|run_pipeline.py
-   - repo: https://github.com/astral-sh/ruff-pre-commit
-     rev: v0.9.1
-     hooks:
-      - id: ruff
-        args: ["--config", ".ruff.toml"]
+#   - repo: https://github.com/astral-sh/ruff-pre-commit
+#     rev: v0.9.1
+#     hooks:
+#      - id: ruff
+#        args: ["--config", ".ruff.toml"]
 #  - repo: https://github.com/PyCQA/flake8
 #    rev: 7.1.2
 #    hooks:
