@@ -25,12 +25,17 @@ repos:
         name: black - consistent Python code formatting (auto-fixes)
         language_version: python # Should be a command that runs python3.6+
         exclude: test_example_module.py|run_pipeline.py
-  - repo: https://github.com/PyCQA/flake8
-    rev: 7.1.2
-    hooks:
-      - id: flake8
-        name: flake8 - Python linting
-        exclude: test_example_module.py|run_pipeline.py
+   - repo: https://github.com/astral-sh/ruff-pre-commit
+     rev: v0.9.1
+     hooks:
+      - id: ruff
+        args: ["--config", ".ruff.toml"]
+#  - repo: https://github.com/PyCQA/flake8
+#    rev: 7.1.2
+#    hooks:
+#      - id: flake8
+#        name: flake8 - Python linting
+#        exclude: test_example_module.py|run_pipeline.py
   - repo: https://github.com/Yelp/detect-secrets
     rev: v1.5.0
     hooks:
