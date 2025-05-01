@@ -3,7 +3,7 @@ name: govcookiecutter template build
 on:
   push:
     branches:
-      - main
+      - github_workflows # main
 
 jobs:
   template-build:
