@@ -13,4 +13,17 @@ repos:
       - id: trailing-whitespace
         name: Check for trailing whitespaces (auto-fixes)
            
-  
+  - repo: https://github.com/pycqa/isort
+    rev: 6.0.1
+    hooks:
+      - id: isort
+        name: isort - Sort python imports (auto-fixes)
+        args: [ "--profile", "black", "--filter-files" ]
+      - id: isort
+        name: isort - Sort cython imports (auto-fixes)
+        types: [cython]
+        args: [ "--profile", "black", "--filter-files" ]
+      - id: isort
+        name: isort - Sort pyi imports (auto-fixes)
+        types: [pyi]
+        args: [ "--profile", "black", "--filter-files" ]
