@@ -43,8 +43,9 @@ repos:
         types: [pyi]
         args: [ "--profile", "black", "--filter-files" ]
 
-  - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.9.1
+  - repo: https://github.com/psf/black
+    rev: 25.1.0 # Replace by any tag/version: https://github.com/psf/black/tags
     hooks:
-      - id: ruff
-        name: "ruff lint"
+      - id: black
+        name: black - consistent Python code formatting (auto-fixes)
+        language_version: python # Should be a command that runs python3.6+
