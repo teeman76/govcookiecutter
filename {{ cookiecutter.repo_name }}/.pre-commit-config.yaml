@@ -42,3 +42,9 @@ repos:
         name: isort - Sort pyi imports (auto-fixes)
         types: [pyi]
         args: [ "--profile", "black", "--filter-files" ]
+
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.9.1
+    hooks:
+      - id: ruff
+        name: "ruff lint"
