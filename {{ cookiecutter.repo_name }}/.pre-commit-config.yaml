@@ -49,3 +49,10 @@ repos:
       - id: black
         name: black - consistent Python code formatting (auto-fixes)
         language_version: python # Should be a command that runs python3.6+
+
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.9.1
+    hooks:
+      - id: ruff
+        name: "ruff lint"
+        args: ["--config", ".ruff.toml"]
