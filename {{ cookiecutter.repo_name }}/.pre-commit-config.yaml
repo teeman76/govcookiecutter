@@ -55,4 +55,4 @@ repos:
     hooks:
       - id: ruff
         name: "ruff lint"
-        args: ["--config", ".ruff.toml"]
+        args: ["--config", ".ruff.toml", "check", "--select", "I", "--fix"]
