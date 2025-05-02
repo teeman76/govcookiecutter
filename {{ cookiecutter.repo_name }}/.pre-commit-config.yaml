@@ -21,6 +21,11 @@ repos:
         exclude: '\.Rd'
       - id: trailing-whitespace
         name: Check for trailing whitespaces (auto-fixes)
+        exclude: |
+          (?x)(
+            ^.github/
+          )
+        exclude_types: [markdown, yaml, toml]
            
   - repo: https://github.com/pycqa/isort
     rev: 6.0.1
